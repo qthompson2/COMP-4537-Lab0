@@ -1,0 +1,17 @@
+.memory-button {
+    width: 10em;
+    height: 5em;
+    position: absolute;
+}
+
+div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div > .memory-button {
+    width: 10em;
+    height: 5em;
+    margin: 10px;
+    position: relative;
+}
