@@ -1,4 +1,4 @@
-//Written with Github Copilot
+//Written in part with GitHub Copilot
 
 //CONSTANTS
 const GAME_BUTTON_CLASS = "memory-button";
