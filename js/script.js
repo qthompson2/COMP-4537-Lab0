@@ -4,7 +4,8 @@
 const GAME_BUTTON_CLASS = "memory-button";
 const TEXT_AREA_POSITION = "absolute";
 const TEXT_AREA_WIDTH = "170px";
-const TEXT_AREA_HEIGHT = "30px";
+const TEXT_AREA_HEIGHT = "24.4px";
+const TEXT_AREA_BUTTON_HEIGHT = "30px";
 const TEXT_AREA_FONT_SIZE = "20px";
 const TEXT_AREA_RISIZE_MODE = "none";
 
@@ -82,7 +83,7 @@ class TextArea {
 
         this.buttonElement = document.createElement("button");
         this.buttonElement.style.position = TEXT_AREA_POSITION;
-        this.buttonElement.style.height = TEXT_AREA_HEIGHT;
+        this.buttonElement.style.height = TEXT_AREA_BUTTON_HEIGHT;
         this.buttonElement.style.left = this.x + this.textAreaElement.getBoundingClientRect().width + 5 + "px";
         this.buttonElement.style.top = this.y + "px";
         this.buttonElement.innerText = GAME_START_BUTTON_MESSAGE;
