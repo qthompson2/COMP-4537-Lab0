@@ -124,7 +124,7 @@ class Game {
             if (Number(this.userInput.getText()) >= 3 && Number(this.userInput.getText()) <= 7) {
                 this.run();
             } else {
-                alert("Please enter a valid number between 3 & 7!");
+                alert(INVALID_INPUT_MESSAGE);
             }
         })
 
