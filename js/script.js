@@ -1,7 +1,12 @@
+//Written with Github Copilot
+
 //CONSTANTS
-const BUTTON_WIDTH = "10em";
-const BUTTON_HEIGHT = "5em";
-const ABSOLUTE_POSITION = "absolute";
+const GAME_BUTTON_CLASS = "memory-button";
+const TEXT_AREA_POSITION = "absolute";
+const TEXT_AREA_WIDTH = "170px";
+const TEXT_AREA_HEIGHT = "30px";
+const TEXT_AREA_FONT_SIZE = "20px";
+const TEXT_AREA_RISIZE_MODE = "none";
 
 class Button {
     constructor(number, x, y, parent) {
@@ -15,7 +20,7 @@ class Button {
         this.buttonElement.style.top = this.y + "px";
         this.buttonElement.innerText = this.number;
 
-        this.buttonElement.classList.add("memory-button");
+        this.buttonElement.classList.add(GAME_BUTTON_CLASS);
 
         this.colour = [
             Math.floor(Math.random() * 255),
@@ -57,11 +62,11 @@ class TextArea {
         this.y = y;
         
         this.textAreaElement = document.createElement("textarea");
-        this.textAreaElement.style.position = ABSOLUTE_POSITION;
-        this.textAreaElement.style.resize = "none";
-        this.textAreaElement.style.height = "30px";
-        this.textAreaElement.style.width = "170px";
-        this.textAreaElement.style.fontSize = "20px";
+        this.textAreaElement.style.position = TEXT_AREA_POSITION;
+        this.textAreaElement.style.resize = TEXT_AREA_RISIZE_MODE;
+        this.textAreaElement.style.height = TEXT_AREA_HEIGHT;
+        this.textAreaElement.style.width = TEXT_AREA_WIDTH;
+        this.textAreaElement.style.fontSize = TEXT_AREA_FONT_SIZE;
         this.textAreaElement.style.left = this.x + "px";
         this.textAreaElement.style.top = this.y + "px";
 
@@ -69,15 +74,15 @@ class TextArea {
 
         this.prompTextElement = document.createElement("p");
         this.prompTextElement.innerText = GAME_START_PROMPT;
-        this.prompTextElement.style.position = ABSOLUTE_POSITION;
+        this.prompTextElement.style.position = TEXT_AREA_POSITION;
         this.prompTextElement.style.left = this.x + "px";
         this.prompTextElement.style.top = this.y - 40 + "px";
 
         document.body.appendChild(this.prompTextElement);
 
         this.buttonElement = document.createElement("button");
-        this.buttonElement.style.position = ABSOLUTE_POSITION;
-        this.buttonElement.style.height = "30px";
+        this.buttonElement.style.position = TEXT_AREA_POSITION;
+        this.buttonElement.style.height = TEXT_AREA_HEIGHT;
         this.buttonElement.style.left = this.x + this.textAreaElement.getBoundingClientRect().width + 5 + "px";
         this.buttonElement.style.top = this.y + "px";
         this.buttonElement.innerText = GAME_START_BUTTON_MESSAGE;
@@ -106,7 +111,8 @@ class TextArea {
     }
 }
 
-const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+//Sleep Function from: https://builtin.com/software-engineering-perspectives/javascript-sleep
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
 
 class Game {
     constructor() {
